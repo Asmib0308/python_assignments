@@ -1,0 +1,30 @@
+import pandas as pd
+import numpy as np
+
+df = pd.read_excel("array.xlsx")
+print(df)
+
+print("First five records only:")
+print(df.head())
+
+print("Last five records only:")
+print(df.tail())
+
+
+print("\nMissing values:")
+print(df.isnull())
+
+df.duplicated()
+
+duplicate_count=df.duplicated().sum()
+print("\nDuplicate records:", duplicate_count)
+
+df = df.drop_duplicates()
+print(df)
+
+print("\nAfter preprocessing:")
+print(df)
+
+print("\nFinal dataset information:")
+print(df.info())
+print(df.isnull().sum())
